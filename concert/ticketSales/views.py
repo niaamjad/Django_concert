@@ -21,9 +21,8 @@ def LocationListView(request):
 
 @login_required
 def ConcertdetailView(request, concert_id):
-    if request.user.is_authenticated and request.user.is_active:
-        concert = concertmodel.objects.get(id=concert_id)
-        return render(request, 'ticketSales\concertdetail.html', {'concert': concert})
+    concert = concertmodel.objects.get(id=concert_id)
+    return render(request, 'ticketSales\concertdetail.html', {'concert': concert})
  
 
 
